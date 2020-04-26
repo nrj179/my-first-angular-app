@@ -1,4 +1,13 @@
-<p>servers works!</p>
+<!-- <input type="text" [(ngModel)]="username" (input)="onEnteringName()"> -->
+<!-- two way data binding -->
+<input type="text" [(ngModel)]="username"> 
 
-<app-server></app-server>
-<app-server></app-server>
+<!-- string interpolation -->
+<hr>
+<p>username is : {{ username }}</p>
+
+<!-- <button class="btn btn-primary" [disabled]="isUsernameEmpty" (click)="clearUsername()">Clear username</button> -->
+<!-- (click) is Event Binding , [disabled] is property Binding -->
+<button class="btn btn-primary" 
+    [disabled]="username === ''" (click)="username = ''">Clear username</button>
+
