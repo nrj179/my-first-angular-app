@@ -1,13 +1,21 @@
 <!-- <input type="text" [(ngModel)]="username" (input)="onEnteringName()"> -->
 <!-- two way data binding -->
-<input type="text" [(ngModel)]="username"> 
+<!-- <input type="text" [(ngModel)]="username">  -->
 
 <!-- string interpolation -->
-<hr>
-<p>username is : {{ username }}</p>
+<!-- <hr> -->
+<!-- <p>username is : {{ username }}</p> -->
 
 <!-- <button class="btn btn-primary" [disabled]="isUsernameEmpty" (click)="clearUsername()">Clear username</button> -->
 <!-- (click) is Event Binding , [disabled] is property Binding -->
-<button class="btn btn-primary" 
-    [disabled]="username === ''" (click)="username = ''">Clear username</button>
+<!-- <button class="btn btn-primary"  -->
+    <!-- [disabled]="username === ''" (click)="username = ''">Clear username</button> -->
+
+<button class="btn btn-primary" (click)="displayDetails()">Display Details</button>
+
+<p *ngIf="isDisplay">Secret Password = tuna</p>
+<div *ngFor="let date of buttonClicks; let i = index" 
+    [ngStyle]="{backgroundColor : getColor(i)}"
+    [ngClass]="{text: i > 4}">{{i}} Button clicked at {{date}}</div>
+
 

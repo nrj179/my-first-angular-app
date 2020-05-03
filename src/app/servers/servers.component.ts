@@ -9,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServersComponent implements OnInit {
 
-  username = "";
-
-  isUsernameEmpty = true;
+  isDisplay = false;
+  username = '';
+  buttonClicks = [];
+  numberClicks = [];
 
   constructor() { 
   }
@@ -19,13 +20,17 @@ export class ServersComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  clearUsername() {
-    this.username = '';
-    this.isUsernameEmpty = true;
+  displayDetails() {
+    this.isDisplay = !this.isDisplay;
+    this.buttonClicks.push(new Date());
+    // this.numberClicks.push(this.numberClicks.length+1);
   }
 
-  onEnteringName() {
-    this.isUsernameEmpty = false;
+  getColor(num) {
+    if (num > 4) {
+      return 'blue';
+    }
+    return 'white';
   }
 
 }
